@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newActivity">
+    tools:context=".newActivity"
+    android:background="@drawable/space2_blur">
 
     <TextView
         android:id="@+id/textView2"

@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 

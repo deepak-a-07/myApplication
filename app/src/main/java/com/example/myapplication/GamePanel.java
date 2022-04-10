@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -16,6 +18,7 @@ import android.view.SurfaceView;
 
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
+
     private MainThread thread;
 
     private SceneManager manager;
@@ -41,6 +44,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated (SurfaceHolder holder) {
+
         thread = new MainThread(getHolder(), this);
         Constants.INIT_TIME = System.currentTimeMillis();
         thread.setRunning(true);
