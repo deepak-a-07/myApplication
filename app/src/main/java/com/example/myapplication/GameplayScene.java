@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,8 +17,8 @@ import android.view.SurfaceHolder;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class GameplayScene implements Scene {
-
+public class GameplayScene extends AppCompatActivity implements Scene {
+    int layoutID = R.layout.game_over;
     private Rect r = new Rect();
 
     private RectPlayer player;
@@ -29,18 +32,21 @@ public class GameplayScene implements Scene {
 
     private OrientationData orientationData;
     private long frameTime;
+    Context context;
 
     public GameplayScene() {
-
         player = new RectPlayer(new Rect(100, 100, 200, 200), Color.rgb(255, 0, 0));
         playerPoint = new Point(Constants.SCREEN_WIDTH/2, 3*Constants.SCREEN_HEIGHT/4);
         player.update(playerPoint);
 
-        obstacleManager = new ObstacleManager(200, 350, 75, Color.LTGRAY);
+        obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
 
         orientationData = new OrientationData();
         orientationData.register();
         frameTime = System.currentTimeMillis();
+    }
+    public void changeActivity() {
+        setContentView(layoutID);
     }
 
     public void reset() {
@@ -54,6 +60,7 @@ public class GameplayScene implements Scene {
     public void terminate() {
         SceneManager.ACTIVE_SCENE = 0;
     }
+
 
     @Override
     public void receiveTouch(MotionEvent event) {
@@ -79,7 +86,7 @@ public class GameplayScene implements Scene {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawColor(Color.BLUE);
+        canvas.drawColor(Color.CYAN);
 
         player.draw(canvas);
         obstacleManager.draw(canvas);
@@ -87,9 +94,11 @@ public class GameplayScene implements Scene {
         if(gameOver) {
             Paint paint = new Paint();
             paint.setTextSize(50);
-            paint.setColor(Color.BLACK);
+            paint.setColor(Color.WHITE);
             drawCenterText(canvas, paint, "Game Over.Tap to Restart");
+
         }
+
     }
 
     @Override
@@ -123,8 +132,10 @@ public class GameplayScene implements Scene {
             obstacleManager.update();
 
             if(obstacleManager.playerCollide(player)) {
+
                 gameOver = true;
                 gameOverTime = System.currentTimeMillis();
+
             }
         }
     }
@@ -139,4 +150,5 @@ public class GameplayScene implements Scene {
         float y = cHeight / 2f + r.height() / 2f - r.bottom;
         canvas.drawText(text, x, y, paint);
     }
+
 }

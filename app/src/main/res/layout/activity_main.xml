@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space2_blur"
+    android:background="@color/cyan"
     tools:context=".MainActivity">
 
    <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
         android:text="@string/activity1"
-        android:textColor="#03A9F4"
-        android:textSize="34sp"
-        android:textStyle="bold"
+        android:textColor="@color/black"
+       android:layout_marginTop="770dp"
+       android:layout_marginLeft="338dp"
+        android:textSize="13sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,10 +25,10 @@
     <ImageView
         android:layout_width="415dp"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/title4"
+        app:srcCompat="@drawable/title6"
         android:contentDescription="@string/the_lost_alien"
-        android:layout_marginLeft="-70dp"
-        android:layout_marginTop="275dp"/>
+        android:layout_marginLeft="-415dp"
+        android:layout_marginTop="250dp"/>
 
     <Button
         android:id="@+id/button"
@@ -35,6 +37,7 @@
         android:layout_marginTop="475dp"
         android:layout_marginLeft="-250dp"
         android:text="@string/button"
+        android:backgroundTint="@color/black"
         app:iconTint="#8C5555"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +52,7 @@
         android:layout_marginTop="550dp"
         android:layout_marginLeft="-88dp"
         android:text="@string/button2"
+        android:backgroundTint="@color/black"
         app:iconTint="#8C5555"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

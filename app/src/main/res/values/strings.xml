@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
-    
-    <string name="activity1">v1.0</string>
+
+    <string name="activity1">Created By : Deepak.A</string>
     <string name="activity2">Activity 2</string>
-    
+
     <string name="button">Start</string>
     <string name="button2">Quit</string>
 

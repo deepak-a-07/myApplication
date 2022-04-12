@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,11 +13,8 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 
-
-
-
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
-
+    GameView gameView;
     private MainThread thread;
 
     private SceneManager manager;
